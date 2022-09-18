@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unordered_map>
 
 /**
  * @brief: The current source file is a compound of some of the most famous Compuer Science algorithms rewritten in a more efficent way
@@ -35,9 +36,22 @@ unsigned int fibonacci(const unsigned int& n){
         second = result; //2
     }
     return result;
-
-
 }
 
+/**
+ * @brief: Efficient algorithm to calculate the frequency of each characters inside a string
+ * The following procedure has been implemented in order to showcase the power of map data structure 
+ * 
+ */
+void c_amount(const std::string& str){
+    std::unordered_map<char,size_t> characters{}; size_t str_size{str.size()};
+
+    for(size_t i{0}; i < str_size; ++i){
+        if(characters[str.at(i)]) ++(characters[str.at(i)]);
+        else characters[str.at(i)] = 1;
+    }
+
+    //to print: for(const auto it : characters) std::cout<<it.first << " " <<it.second <<"\n";
+}
 
 
