@@ -20,14 +20,14 @@ class binary_tree{
         size_t nodes_amount() const{
             return amount;
         }
-        void add_two_nodes(const node<T>& left, const node<T>& right){
-            header.left = left.left;
-            header.right = right.right;
+        void add_two_nodes(const node<T>& left_node, const node<T>& right_node){
+            header.left = left_node.left;
+            header.right = right_node.right;
             amount += 2;
         }
 };  
 
 int main(int argc, char const *argv[])
-{           
+{               
     
 }   
