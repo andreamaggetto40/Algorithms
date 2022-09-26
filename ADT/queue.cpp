@@ -16,7 +16,9 @@ class queue{
             items.push_back(item);
         }
         void pop_front(){
-            for(size_t i{0}; i < items.size() - 1; ++i){
+            size_t items_size{items.size()};
+
+            for(size_t i{0}; i < items_size - 1; ++i){
                 items.at(i) = items.at(i + 1);
             }
 
