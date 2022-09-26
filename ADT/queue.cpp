@@ -30,15 +30,4 @@ class queue{
         }
 };
 
-int main(int argc, char const *argv[])
-{       
-    queue<int> q{};
 
-    for(int i = 0; i < 10; ++i) q.push_back(i);
-
-    q.pop_front(); q.pop_front();
-
-    std::cout<<q.size() <<"\n";
-
-    
-}
