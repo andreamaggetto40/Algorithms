@@ -1,5 +1,11 @@
 #include <iostream>
 
+/**
+ * @brief Binary Tree class
+ * @details This file wants to display what a Binary Tree is and how it's made
+ * 
+ * @author Andrea Maggetto
+ */
 template<typename T>
 struct node{
     T info;
