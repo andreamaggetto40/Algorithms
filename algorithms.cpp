@@ -10,8 +10,8 @@
 
 
 /**
- * @brief: The classic fibonacci algorithm implementation.
- * Though it's its most adopted implementation, It isn't so efficent, Time complexity = O(n^n)
+ * @brief: Fibonacci numbers recursive algorithm.
+ * @details: The following implementation wants to stress how the recursion pattern works, through this well-known algorithm
  * 
  * @return fibonacci(n)
  */
@@ -53,6 +53,5 @@ void c_amount(const std::string& str){
 
     //to print: for(const auto it : characters) std::cout<<it.first << " " <<it.second <<"\n";
 }
-
 
 
