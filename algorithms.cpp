@@ -3,7 +3,7 @@
 #include <vector>
 
 /**
- * @brief: The current source file is a compound of some of the most famous Compuer Science algorithms rewritten in a more efficent way
+ * @brief: The current source file is a compound of some of the most famous Compuer Science algorithms rewritten in a more efficent way.
  * @author: Andrea Maggetto
  */
 
@@ -12,7 +12,7 @@
 
 /**
  * @brief: Fibonacci numbers recursive algorithm.
- * @details: The following implementation wants to stress how the recursion pattern works, through this well-known algorithm
+ * @details: The following implementation wants to stress how the recursion pattern works, through this well-known algorithm.
  * 
  * @return fibonacci(n)
  */
