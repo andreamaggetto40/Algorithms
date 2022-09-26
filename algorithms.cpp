@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unordered_map>
+#include <vector>
 
 /**
  * @brief: The current source file is a compound of some of the most famous Compuer Science algorithms rewritten in a more efficent way
@@ -24,6 +25,7 @@ unsigned int recursive_fibonacci(const unsigned int& n){
  * @brief: Iterative solution of the Fibonacci series.
  * Through one single loop the time complexity has massively fallen.
  * At run-time this iterative implementation instantly compiles also when n = 10^9 
+ * @param n : number to calculate fibonacci(n)
  * @return fibonacci(n)
  */
 unsigned int fibonacci(const unsigned int& n){  
@@ -41,7 +43,7 @@ unsigned int fibonacci(const unsigned int& n){
 /**
  * @brief: Efficient algorithm to calculate the frequency of each characters inside a string
  * The following procedure has been implemented in order to showcase the power of map data structure 
- * 
+ * @param str: Input string
  */
 void c_amount(const std::string& str){
     std::unordered_map<char,size_t> characters{}; size_t str_size{str.size()};
@@ -53,5 +55,31 @@ void c_amount(const std::string& str){
 
     //to print: for(const auto it : characters) std::cout<<it.first << " " <<it.second <<"\n";
 }
+
+/**
+ * @brief a different binary search implementation. 
+ * The following encompasses both the divider and conquer and the two pointers coding patterns.
+ * @param vect : Input vector
+ * @param value : Value to find 
+ * @return true : If value is in the input vector
+ * @return false : Otherwise
+ */
+bool binary_search(const std::vector<int>& vect, const int& value){
+    bool check{false}; int begin{},end,middle{vect.at(vect.size() / 2)};
+
+    if(value < middle){
+        begin = 0; end = middle;
+    }
+    else{
+        begin = middle; end = vect.size() - 1;
+    }
+
+    for(; begin < end and !check; ++begin, --end){
+        check |= (vect.at(begin) == value || vect.at(end) == value);
+    }
+
+    return check;
+}
+
 
 
