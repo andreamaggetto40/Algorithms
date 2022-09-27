@@ -12,6 +12,9 @@ class queue{
         queue(const T& item){
             items.push_back(item);
         }
+        queue(const queue<T>& q){
+            items = q.items;
+        }
         void push_back(const T& item){
             items.push_back(item);
         }
