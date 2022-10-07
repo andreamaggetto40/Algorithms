@@ -81,5 +81,32 @@ bool binary_search(const std::vector<int>& vect, const int& value){
     return check;
 }
 
+/**
+ * @brief: Euclidean algorithm to find out MCD between two numbers
+ * @details : The algorithms work in the following way:
+ *            Given two numbers, A and B, both natural numbers,
+ *            A can be rewritten as: A = B * quotient(A,B) + division rest(A,B)
+ *            This istruction is iteratively repeated until A or B is equals to 0.
+ *            The MCD is given when one of the two numbers is 0 and the other is not.
+ *            The latter is the actual MCD between the two numbers
+ * @param first First number
+ * @param second Second number
+ * @return MCD between first and second
+ */
+unsigned int get_mcd(int& first,int& second){
+    if(!first and second) return second;
+    else if(first and !second) return first;
+
+    for(; first and second;){
+        unsigned division_rest{first - (second * (first / second))};
+        first = second;
+        second = division_rest;
+    }
+
+    return first ? first : second;
+};
+
+
+
 
 
