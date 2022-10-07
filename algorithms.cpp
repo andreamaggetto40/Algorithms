@@ -93,18 +93,16 @@ bool binary_search(const std::vector<int>& vect, const int& value){
  * @param second Second number
  * @return MCD between first and second
  */
-unsigned int get_mcd(int& first,int& second){
-    if(!first and second) return second;
-    else if(first and !second) return first;
-
+unsigned int get_mcd(int first,int second){
     for(; first and second;){
-        unsigned division_rest{first - (second * (first / second))};
+        unsigned int division_rest{first - (second * (first / second))};
         first = second;
         second = division_rest;
     }
 
     return first ? first : second;
 };
+
 
 
 
