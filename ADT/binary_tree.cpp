@@ -7,33 +7,37 @@
  * @author Andrea Maggetto
  */
 template<typename T>
-struct node{
-    T info;
-    node* left{nullptr};
-    node* right{nullptr};
-};
-
-template<typename T>
 class binary_tree{
-    node<T> header{}; size_t amount{0};
+    class node{
+        T info;
+        node* left{},right{};
+
+        public:
+            node(const T& info) : info(info), left(nullptr), right(nullptr){};
+    };
+    node root{};
 
     public:
-        binary_tree(){};
-        binary_tree(const T& value){
-            header.info = value;
-            ++amount;
+        binary_tree() : root(nullptr){};
+        void pre_order(const node& start) const{
+            if(start){
+                std::cout<<"Info : " <<start.info <<" ";
+                pre_order(start.left);
+                pre_order(start.right);
+            }
         }
-        size_t nodes_amount() const{
-            return amount;
+        void in_order(const node& to_start) const{
+            if(start){
+                in_order(to_start.left);
+                std::cout<<"Info : " <<to_start.info <<" ";
+                in_order(to_start.right);
+            }
         }
-        void add_two_nodes(const node<T>& left_node, const node<T>& right_node){
-            header.left = left_node.left;
-            header.right = right_node.right;
-            amount += 2;
+        void post_order(const node& to_start) const{
+            if(start){
+                post_order(to_start.left);
+                post_order(to_start.left);
+                std::cout<<"Info : " <<to_start.info <<" ";
+            }
         }
-};  
-
-int main(int argc, char const *argv[])
-{                       
-    
-}   
+};   
